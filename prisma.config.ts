@@ -1,0 +1,18 @@
+// Prisma config - production-safe environment loading
+import { config } from "dotenv";
+import { defineConfig } from "prisma/config";
+
+// Load .env.local in development, .env in production
+const envFile = process.env.NODE_ENV === "production" ? ".env" : ".env.local";
+config({ path: envFile });
+
+export default defineConfig({
+  schema: "prisma/schema.prisma",
+  migrations: {
+    path: "prisma/migrations",
+  },
+  datasource: {
+    url: process.env["DATABASE_URL"],
+  },
+});
+
