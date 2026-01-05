@@ -1,22 +1,23 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "What Now - ADHD Decision Killer",
   description: "A decision-killer PWA for ADHD brains. You dump. The app decides. You move.",
   manifest: "/manifest.json",
-  themeColor: "#6b46ff",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "What Now",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#6b46ff",
 };
 
 export default function RootLayout({
