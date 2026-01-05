@@ -32,6 +32,13 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Redirect if not authenticated (after auth check completes)
+  useEffect(() => {
+    if (!isAuthPending && !session) {
+      router.push("/login");
+    }
+  }, [session, isAuthPending, router]);
+
   // Get current task
   const currentTask = tasks[currentTaskIndex] || null;
 
