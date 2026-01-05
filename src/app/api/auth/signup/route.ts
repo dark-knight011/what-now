@@ -30,9 +30,7 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        console.log("Signup attempt for:", email);
-
-        // 1. Create user via Better Auth
+        // Create user via Better Auth
         // strictly pass headers so it can set cookies
         const signUpResponse = await auth.api.signUpEmail({
             body: {
@@ -42,8 +40,6 @@ export async function POST(request: NextRequest) {
             },
             headers: request.headers,
         });
-
-        console.log("User created:", signUpResponse?.user?.id);
 
         if (!signUpResponse || !signUpResponse.user) {
             console.error("Better Auth failed to return user object");
@@ -59,7 +55,6 @@ export async function POST(request: NextRequest) {
                 where: { id: signUpResponse.user.id },
                 data: { openRouterKey },
             });
-            console.log("User updated with API key");
         } catch (dbError) {
             console.error("Prisma update failed:", dbError);
             // Verify if user exists?
@@ -81,8 +76,7 @@ export async function POST(request: NextRequest) {
         });
 
         // Manually set session cookie if token exists
-        // @ts-ignore - token might be directly on response or in session
-        const sessionToken = signUpResponse.token || signUpResponse.session?.token;
+        const sessionToken = signUpResponse.token || (signUpResponse as any).session?.token;
 
         if (sessionToken) {
             response.cookies.set("whatnow.session_token", sessionToken, {

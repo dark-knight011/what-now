@@ -90,7 +90,7 @@ export default function SignUpPage() {
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            className="w-full h-12 bg-transparent rounded-lg !pl-6 pr-4 text-white placeholder:text-white/20 border border-white/10 focus:border-primary focus:bg-white/[0.02] outline-none ring-0 transition-all duration-300 font-medium"
+                            className="w-full h-12 bg-transparent rounded-lg pl-6! pr-4 text-white placeholder:text-white/20 border border-white/10 focus:border-primary focus:bg-white/2 outline-none ring-0 transition-all duration-300 font-medium"
                             placeholder="Name (optional)"
                         />
                     </div>
@@ -102,7 +102,7 @@ export default function SignUpPage() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="w-full h-12 bg-transparent rounded-lg !pl-6 pr-4 text-white placeholder:text-white/20 border border-white/10 focus:border-primary focus:bg-white/[0.02] outline-none ring-0 transition-all duration-300 font-medium"
+                            className="w-full h-12 bg-transparent rounded-lg pl-6! pr-4 text-white placeholder:text-white/20 border border-white/10 focus:border-primary focus:bg-white/2 outline-none ring-0 transition-all duration-300 font-medium"
                             placeholder="Email"
                         />
                     </div>
@@ -115,7 +115,7 @@ export default function SignUpPage() {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                             minLength={8}
-                            className="w-full h-12 bg-transparent rounded-lg !pl-6 pr-4 text-white placeholder:text-white/20 border border-white/10 focus:border-primary focus:bg-white/[0.02] outline-none ring-0 transition-all duration-300 font-medium"
+                            className="w-full h-12 bg-transparent rounded-lg pl-6! pr-4 text-white placeholder:text-white/20 border border-white/10 focus:border-primary focus:bg-white/2 outline-none ring-0 transition-all duration-300 font-medium"
                             placeholder="Password"
                         />
                     </div>
@@ -127,7 +127,7 @@ export default function SignUpPage() {
                             value={openRouterKey}
                             onChange={(e) => setOpenRouterKey(e.target.value)}
                             required
-                            className="w-full h-12 bg-transparent rounded-lg !pl-6 pr-4 text-white placeholder:text-white/20 border border-white/10 focus:border-primary focus:bg-white/[0.02] outline-none ring-0 transition-all duration-300 font-medium"
+                            className="w-full h-12 bg-transparent rounded-lg pl-6! pr-4 text-white placeholder:text-white/20 border border-white/10 focus:border-primary focus:bg-white/2 outline-none ring-0 transition-all duration-300 font-medium"
                             placeholder="OpenRouter API Key (sk-or-...)"
                         />
                         <p className="text-right mt-2 text-xs">

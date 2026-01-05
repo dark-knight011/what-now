@@ -71,7 +71,10 @@ export async function activateNextTask(sessionId: string): Promise<Task | null> 
     }
 
     // Mark current as done
-    await db.tasks.update(tasks[currentIndex].id, { status: 'done' });
+    const currentTask = tasks[currentIndex];
+    if (currentTask) {
+        await db.tasks.update(currentTask.id, { status: 'done' });
+    }
 
     // Activate next locked task
     const nextTask = tasks[currentIndex + 1];

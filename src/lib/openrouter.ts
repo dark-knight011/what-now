@@ -99,7 +99,7 @@ No explanation, no markdown, just the JSON array.`;
             { role: "user", content: userPrompt },
         ],
         undefined, // Use default model
-        { temperature: 0.5, apiKey }
+        apiKey ? { temperature: 0.5, apiKey } : { temperature: 0.5 }
     );
 
     try {
@@ -149,7 +149,7 @@ No explanation, no markdown, just the JSON object.`;
             { role: "user", content: userPrompt },
         ],
         undefined, // Use default model
-        { temperature: 0.5, apiKey }
+        apiKey ? { temperature: 0.5, apiKey } : { temperature: 0.5 }
     );
 
     try {
